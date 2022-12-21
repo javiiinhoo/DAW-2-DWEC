@@ -1,0 +1,131 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Dashboard API
+servers:
+  - url: http://raspi:8000/api/v1
+paths:
+  /dashboards:
+    get:
+      summary: List all dashboards
+      responses:
+        200:
+          description: An array of dashboards
+          content:
+            application/json:    
+              schema:
+                example:
+                  - id: 1
+                    title: Forocoches
+                    description: En este dashboard se pregunta de todo
+                    last_updated: '2022-06-07T16:31:00.943Z'
+                  - id: 2
+                    title: Foromotos
+                    description: Sólo preguntas sobre motos
+                    last_updated: '2022-05-06T17:32:00.554Z'
+  /dashboards/{dashboardId}:
+    get:
+      summary: Info for a specific dashboard
+      parameters:
+        - name: dashboardId
+          in: path
+          required: true
+          description: The id of the dashboard to retrieve
+          schema:
+            type: int
+      responses:
+        200:
+          description: Information of the dashboard, containing all its questions
+          content:
+            application/json:    
+              schema:
+                example:
+                  title: Forocoches
+                  description: En este dashboard se pregunta de todo
+                  last_updated: '2022-06-07T16:31:00.943Z'
+                  questions:
+                    - question_id: 1
+                      title: Sobre Lofi
+                      description: ¿Por qué el Lofi es tan popular?
+                      created_at: '2022-06-07T13:24:59.953Z'
+  /dashboards/{dashboardId}/questions:
+    post:
+      summary: Create a question
+      parameters:
+        - name: dashboardId
+          in: path
+          required: true
+          description: The id of the dashboard in which the question will be posted
+          schema:
+            type: int
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              example:
+                title: Pitágoras
+                description: ¿En qué consiste exactamente el teorema de Pitágoras?
+      responses:
+        201:
+          description: The question was created correctly
+  /dashboards/{dashboardId}/questions/{questionId}:
+    get:
+      summary: Info for a specific question
+      parameters:
+        - name: dashboardId
+          in: path
+          required: true
+          description: The id of the dashboard which the question belongs to
+          schema:
+            type: int
+        - name: questionId
+          in: path
+          required: true
+          description: The id of the question
+          schema:
+            type: int
+      responses:
+        200:
+          description: Information of the question, containing all its answers
+          content:
+            application/json:
+              schema:
+                example:
+                  dashboard_title: Forocoches
+                  question_title: Sobre Lofi
+                  question: ¿Por qué el Lofi es tan popular?
+                  created_at: '2022-06-07T13:24:59.953Z'
+                  answers:
+                    - answer_id: 1
+                      description: Ni idea, a mi me gusta
+                      created_at: '2022-06-07T14:24:00.153Z'
+                    - answer_id: 2
+                      description: ¿Lofi? ¿Eso qué es?
+                      created_at: '2022-06-07T15:33:11.221Z'
+  /dashboards/{dashboardId}/questions/{questionId}/answers:
+    post:
+      summary: Create an answer
+      parameters:
+        - name: dashboardId
+          in: path
+          required: true
+          description: The id of the dashboard in which the question will be posted
+          schema:
+            type: int
+        - name: questionId
+          in: path
+          required: true
+          description: The id of the question being answered
+          schema:
+            type: int
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              example:
+                description: La respuesta definitiva es 42
+      responses:
+        201:
+          description: The answer was created correctly

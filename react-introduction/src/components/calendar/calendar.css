@@ -1,0 +1,12 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.child {
+    flex: 0 1 14%
+}
+
+.sunday {
+    background-color: red;
+}

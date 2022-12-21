@@ -1,0 +1,36 @@
+img {
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.titulo,
+.text,
+.ojo,
+.acierto,
+.advertma,
+.advertme {
+    text-align: center;
+    color: darkblue;
+    font-weight: bold;
+}
+
+.boton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightblue;
+    color: black;
+}
+
+.insert {
+    
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightblue;
+    color: black;
+}

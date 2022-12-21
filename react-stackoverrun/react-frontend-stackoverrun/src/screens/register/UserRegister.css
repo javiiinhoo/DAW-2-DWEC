@@ -1,0 +1,25 @@
+.registerHeader,
+.registerForm {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.registerFormInput {
+    height: 46px;
+    background-color: rgba(57, 57, 57, 0.06);
+    border: none;
+    border-radius: 12px;
+    margin: 5px;
+    padding: 0px 23px;
+}
+
+.registerFormInput:hover {
+    background-color: rgba(57, 57, 57, 0.20);
+}
+
+.responseUserFeedback {
+    color: rgb(151, 50, 50);
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}

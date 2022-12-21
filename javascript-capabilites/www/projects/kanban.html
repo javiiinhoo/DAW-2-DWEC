@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="/projects/css/kanban.css" />
+    <script defer src="/projects/js/kanban.js"></script>
+</head>
+
+<body>
+    <div id="parent">
+        <div class="topBar" data-cy="pageToolsBar">
+            <div class="fullscreenButtonContainer" data-cy="fullscreenButtonContainer">
+                <button id="fullscreenButton" data-cy="topRightButton">Pantalla completa</button>
+            </div>
+            <div class="newTaskContainer" data-cy="newTaskContainer">
+                <!--ej 9-->
+                <form id="newTaskForm" data-cy="newTaskForm">
+                    <label><b>Añadir tarea:</b></label>
+                    <input name="inputTaskName" type="text" placeholder="Funcionalidad de logout"
+                        data-cy="inputNameTask">
+
+                    <select name="inputTaskType" data-cy="inputTypeTask">
+                        <option value="other">Otro</option>
+                        <option value="backend">Backend</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="urgent">Importante</option>
+                    </select>
+
+                    <input type="submit" value="Añadir tarea" data-cy="inputAddTaskSubmit">
+                </form>
+            </div>
+        </div>
+        <hr class="topBarSeparator">
+
+        <div id="toDoColumn" class="kanbanColumn column1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>
+            <h2>Por hacer</h2>
+            </p>
+            <div id="task0" class="taskNote yellow" + draggable="true" ondragstart="drag(event)">
+                Detección de colisiones de dos objetos 2D en JS
+            </div>
+        </div>
+        <!--ej 7-->
+        <div class="kanbanColumn column2" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <p>
+            <h2>Diseño</h2>
+            </p>
+        </div>
+        <div class="kanbanColumn column3" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <p>
+            <h2>Implementación</h2>
+            </p>
+        </div>
+        <div class="kanbanColumn column4" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <p>
+            <h2>Tests</h2>
+            </p>
+        </div>
+        <div class="kanbanColumn column5" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <p>
+            <h2>Terminado</h2>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

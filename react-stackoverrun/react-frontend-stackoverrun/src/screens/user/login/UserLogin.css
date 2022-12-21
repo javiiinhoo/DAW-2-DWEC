@@ -1,0 +1,25 @@
+.loginHeader,
+.loginForm {
+    padding-top: 32px;
+    text-align: center;
+}
+
+.loginFormInput {
+    height: 46px;
+    background-color: rgba(57, 57, 57, 0.06);
+    border: none;
+    border-radius: 12px;
+    margin: 5px;
+    padding: 0px 23px;
+}
+
+.loginFormInput:hover {
+    background-color: rgba(57, 57, 57, 0.20);
+}
+.loginUserFeedback {
+    color: rgb(151, 60, 60);
+    text-align: center;
+    font-weight: 767;
+    font-size: 18px;
+  }
+  

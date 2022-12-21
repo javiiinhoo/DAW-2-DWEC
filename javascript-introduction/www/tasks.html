@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script defer type="module" src="tasksAdmin.js"> </script>
+
+</head>
+
+<body>
+    <h1 data-cy="pageHeader">Tareas y prioridades</h1>
+    <div id="mainDiv" data-cy="main">
+        <ol data-cy="taxisOrderedList" id="tasksList"></ol>
+    </div>
+    <form data-cy="formTask" id="tasksForm">
+        <input data-cy="input1" name="name" type="text" placeholder="Desc. Tarea" />
+        <input data-cy="input2" name="Relevancia" type="number" placeholder="Importancia" />
+        <input data-cy="input3" name="fecha"type="date" />
+        <input data-cy="inputSubmit" type="submit" />
+    </form>
+    <button id="sortButton" data-cy="relevanceSort">Ordenar por relevancia</button>
+    <button id="sortButton2" data-cy="deadlineSortButton">Ordenar por fecha</button>
+
+</body>
+
+</html>

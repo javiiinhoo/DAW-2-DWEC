@@ -1,0 +1,32 @@
+﻿<html>
+
+<head>
+  <script defer src="tiny.js">
+
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      document.getElementById("p3").innerHTML = "Esto ha cambiado en DOMContentLoaded";
+    });
+  </script>
+
+</head>
+
+<body>
+  <h1 data-cy="pageHeader">¡Enhorabuena!</h1>
+  <h1 data-cy="pageHeader">On my way to becoming a Web master</h1>
+  <p data-cy="paragraph1" id="p1">Parece que estás sirviendo una página web. ¡Asombroso!</p>
+  <p data-cy="paragraph2" id="p2">¿Sabías que <i>cualquiera</i> con acceso TCP/IP a tu ordenador puede verla? ¡Es sólo
+    una cuestión de configurar el <i>firewall</i> y el <i>router</i> que nuestros amigos de Japón la visiten!</p>
+  <h3>De momento...</h3>
+  <a href="/issue2.html" data-cy="issue2link">Fabricante</a>
+  <p data-cy="paragraph3" id="p3">Basta con que <b>tú</b> accedas a ella desde tu propio ordenador.</p>
+  <script>
+    document.getElementById("p1").innerHTML = "Este contenido ha sido puesto aquí mediante JavaScript";
+  </script>
+  <a href="/tasks.html" data-cy="linkTasks">Mis tareas</a>
+
+</body>
+
+</html>

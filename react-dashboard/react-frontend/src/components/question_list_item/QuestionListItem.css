@@ -1,0 +1,12 @@
+.question-li {
+    margin: 11px;
+    padding: 5px;
+    background-color: rgb(245, 240, 240);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px 0px;
+}
+
+.question-li:hover {
+    cursor: pointer;
+    background-color: rgb(220, 230, 230);
+}
